@@ -11,6 +11,10 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+// Import Routes and use them
+const authRoutes = require("./src/routes/authRoutes");
+app.use("/api/auth", authRoutes);
+
 // Test Route
 app.get("/", (req, res) => {
   res.json({ message: "Berhasil" });
